@@ -4,7 +4,6 @@
         {
             "name": "base",
             "hidden": true,
-            "generator": "Ninja",
             "binaryDir": "${sourceDir}/build-${presetName}",
             "installDir": "${sourceDir}/install-${presetName}"
         },
@@ -12,6 +11,7 @@
             "name": "windows-base",
             "hidden": true,
             "inherits": "base",
+            "generator": "Ninja",
             "cacheVariables": {
                 "CMAKE_C_COMPILER": "cl.exe",
                 "CMAKE_CXX_COMPILER": "cl.exe"
@@ -46,8 +46,7 @@
             "name": "linux-base",
             "hidden": true,
             "inherits": "base",
-            "binaryDir": "${sourceDir}/build-${presetName}",
-            "installDir": "${sourceDir}/install-${presetName}",
+            "generator": "Unix Makefiles",
             "cacheVariables": {
                 "CMAKE_C_COMPILER": "gcc",
                 "CMAKE_CXX_COMPILER": "g++"
